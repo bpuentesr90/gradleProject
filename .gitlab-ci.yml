@@ -1,0 +1,11 @@
+variables:
+  SONAR_URL: "http://95.216.227.222:9070"
+  SONAR_LOGIN: "admin"
+  SONAR_PASSWORD: "admin"
+
+sonarqube_master_job:
+  stage: test
+  only:
+    - master
+  script:
+    - gradle sonarqube -Dsonar.host.url=http://95.216.227.222:9070 -Dsonar.verbose=true
