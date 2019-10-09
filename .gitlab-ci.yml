@@ -8,4 +8,5 @@ sonarqube_master_job:
   only:
     - master
   script:
-    - gradle sonarqube -Dsonar.host.url=http://95.216.227.222:9070 -Dsonar.verbose=true
+    - gradle sonarqube -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN 
+    -Dsonar.password=$SONAR_PASSWORD -Dsonar.verbose=true
